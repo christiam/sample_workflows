@@ -4,7 +4,7 @@ This directory contains a collection of sample Common Workflow Language (CWL) pi
 If you are new to CWL, you may want to start by looking at some of the resources listed at the end of this page.
 
 ### Why a workflow language?
-Many pipeline are written in an ad hoc manner using the scripting language at hand.  In the 90's it was PERL, today it's PYTHON. There's nothing inherently wrong with the scripting languages, but a workflow language (e.g., CWL) provides a framework that is easier for other people to understand and performs more checking on input. Additionally, the CWL framework results in pipeline that are more compliant with [FAIR principles][fair_principles]
+Many pipeline are written in an ad hoc manner using the scripting language at hand.  In the 90's it was PERL, today it's PYTHON. There's nothing inherently wrong with the scripting languages, but a workflow language (e.g., CWL) provides a framework that helps you break your task up into distinct steps are easier to maintain and performs more checking on input. Additionally, the CWL framework results in pipeline that are more compliant with [FAIR principles][fair_principles]
 
 ### What's here for me to look at
 Enough talk.  What's in this directory that I should look at?  
