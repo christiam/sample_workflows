@@ -42,7 +42,7 @@ Sure.  table coming real soon!
 
 
 |Description   |Input   |Class    | Purpose    |Requirements    |
-|--------------|------------------|------------|----------------|
+|--------------|--------|---------|------------|----------------|
 |blastp_docker.cwl | blastp_docker_input.yml | CommandLineTool | BLASTP search | database, query file|
 |blastdbcmd_docker.cwl | blastdbcmd_docker_input.yml | CommandLineTool | Fetch info from BLAST database | database |
 |magicblast_docker.cwl | magicblast_docker_input.yml | CommandLineTool | Align sequences | database | 
