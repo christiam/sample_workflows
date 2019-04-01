@@ -29,7 +29,7 @@ Also, you are not limited to the CWL modules in this directory or the ones you w
 We've dockerized BLAST for our pipelines for a couple of different reasons.  One is that it makes the setup of BLAST on a cloud instance very simple.  Another is that docker plays nicely with CWL.  
 
 ### Where can I run these?
-So far, these workflows have been run on a Ubuntu 18.0.4 with the following packages installed:
+So far, these workflows have been run on a Ubuntu 18.0.4 instance with the following packages installed:
 * git
 * cwltool
 * vim
@@ -38,7 +38,7 @@ So far, these workflows have been run on a Ubuntu 18.0.4 with the following pack
 More specific details are coming!
 
 ### Can you describe these workflows?
-Sure.  table coming real soon!
+Sure.  Look at the table below.
 
 
 |Description   |Input   |Class    | Purpose    |Requirements    |
@@ -46,7 +46,11 @@ Sure.  table coming real soon!
 |blastp_docker.cwl | blastp_docker_input.yml | CommandLineTool | BLASTP search | database, query file|
 |blastdbcmd_docker.cwl | blastdbcmd_docker_input.yml | CommandLineTool | Fetch info from BLAST database | database |
 |magicblast_docker.cwl | magicblast_docker_input.yml | CommandLineTool | Align sequences | database | 
-|parse_blast_report.cwl | parse_blast_report_input.yml | parse tabular output| CommandLineTool | Tabular input |
+|parse_blast_report.cwl | parse_blast_report_input.yml | CommandLineTool | parse tabular output | Tabular input |
+|samtools-bed.cwl | samtools-bed_input.yml | CommandLineTool | produce BED file from BAM | Workflows from [here][cwl_mods]|
+|simple_two_step.cwl | simple_two_step_input.yml | Workflow | BLASTP search and parse tabular | database, query file, parse_blast_report.py | query, db, set $PATH to location of parse_blast_report.py|
+|simple_three_step.cwl | simple_three_step_input.yml | Workflow | simple two step and dump out subject sequences | query, db, set $PATH to location of parse_blast_report.py|
+|magicblast2bami.cwl | magicblast2bami_input.yml | Workflow| Magic-BLAST run; SAM to indexed BAM| database, Workflows from [here][cwl_mods]|
 
 
 
