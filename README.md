@@ -4,7 +4,7 @@ This directory contains a collection of sample Common Workflow Language (CWL) pi
 If you are new to CWL, you may want to start by looking at some of the resources listed at the end of this page.
 
 ### Why a workflow language?
-Many pipeline are written in an ad hoc manner using the scripting language at hand.  In the 90's it was PERL, today it's PYTHON. There's nothing inherently wrong with the scripting languages, but a workflow language (e.g., CWL) provides a framework that helps you break your task up into distinct steps that are easier to maintain and performs more checking on input. Additionally, the CWL framework results in pipeline that are more compliant with [FAIR principles][fair_principles]
+Many pipeline are written in an ad hoc manner using the scripting language at hand. There's nothing inherently wrong with scripting languages, but a workflow language (e.g., CWL) provides a framework that helps you break your task up into distinct steps that are easier to maintain and performs more checking on input. You can still use a script as one of the steps. Additionally, the CWL framework results in pipeline that are more compliant with [FAIR principles][fair_principles]
 
 ### What's here that's interesting?
 Enough talk.  What's in this directory that I should look at?  
@@ -26,7 +26,7 @@ You can modify the python script (it's called parse_blast_report.py) to make it 
 Also, you are not limited to the CWL modules in this directory or the ones you write.  There's a bunch of CWL modules [here][cwl_mods].  One of the workflows in this directory (magicblast2bami.cwl) uses the samtools workflows from that directory to produce a sorted/indexed BAM file from the original SAM file that Magic-BLAST produces.  These modules use a dockerized version of samtools, so you don't even need to compile and install samtools! 
 
 ### Why docker?
-We've dockerized BLAST for our pipelines for a couple of different reasons.  One is that it makes the setup of BLAST on a cloud instance very simple.  Another is that docker plays nicely with CWL.  Finally, there's some docker features 
+We've dockerized BLAST for our pipelines for a couple of different reasons.  One is that it makes the setup of BLAST on a cloud instance very simple.  Another is that docker plays nicely with CWL.  
 
 ### Where can I run these?
 So far, these workflows have been run on a Ubuntu 18.0.4 with the following packages installed:
