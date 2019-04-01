@@ -6,7 +6,7 @@ If you are new to CWL, you may want to start by looking at some of the resources
 ### Why a workflow language?
 Many pipeline are written in an ad hoc manner using the scripting language at hand.  In the 90's it was PERL, today it's PYTHON. There's nothing inherently wrong with the scripting languages, but a workflow language (e.g., CWL) provides a framework that helps you break your task up into distinct steps that are easier to maintain and performs more checking on input. Additionally, the CWL framework results in pipeline that are more compliant with [FAIR principles][fair_principles]
 
-### What's here for me to look at
+### What's here that's interesting?
 Enough talk.  What's in this directory that I should look at?  
 
 First, you should take a quick read through the [CWL User Guide][cwl_man].  Then, you could start by looking at a simple BLASTP search.  Every CWL task requires two files.  The first one specifies the tools and the structure of the work.  The second specifies the arguments to your tools.  For the BLASTP search, you'd execute:
@@ -15,15 +15,31 @@ First, you should take a quick read through the [CWL User Guide][cwl_man].  Then
    cwl-runner blastp_docker.cwl blastp_docker_input.yml
    ```
 
-This will just produce normal BLAST output.  That's good, but it would be more exciting to run a BLASTP search, then do something with the results.  The command below runs BLASTP, the parses the tabular output with a python script:
+This command just runs a BLASTP search and produces BLAST output.  In the parlance of CWL this module has the class "CommandLineTool".  That's good, but it would be more interesting to run a pipleline where the BLASTP search is just one part of it.  The command below runs BLASTP, the parses the tabular output with a python script:
 
    ```bash
    cwl-runner simple_two_step.cwl simple_two_step_input.yml
    ``` 
 
-You can even modify the python script (it's called parse_blast_report.py) to make it do something else.You can also add steps to this workflow.  
+You can modify the python script (it's called parse_blast_report.py) to make it do something else. You can also add steps to this workflow. This module has the CWL class "Workflow" and runs a couple of modules with class CommandLineTool. 
 
 Also, you are not limited to the CWL modules in this directory or the ones you write.  There's a bunch of CWL modules [here][cwl_mods].  One of the workflows in this directory (magicblast2bami.cwl) uses the samtools workflows from that directory to produce a sorted/indexed BAM file from the original SAM file that Magic-BLAST produces.  These modules use a dockerized version of samtools, so you don't even need to compile and install samtools! 
+
+### Why docker?
+We've dockerized BLAST for our pipelines for a couple of different reasons.  One is that it makes the setup of BLAST on a cloud instance very simple.  Another is that docker plays nicely with CWL.  Finally, there's some docker features 
+
+### Where can I run these?
+So far, these workflows have been run on a Ubuntu 18.0.4 with the following packages installed:
+* git
+* cwltool
+* vim
+* docker
+
+More specific details are coming!
+
+### Can you describe these workflows?
+Sure.  table coming real soon!
+
 
 
 
