@@ -40,12 +40,13 @@ More specific details are coming!
 ### Can you describe these workflows?
 Sure.  table coming real soon!
 
+
 |Description   |Input   |Class    | Purpose    |Requirements    |
 |--------------|------------------|------------|----------------|
 |blastp_docker.cwl | blastp_docker_input.yml | CommandLineTool | BLASTP search | database, query file|
-|blastdbcmd_docker.cwl | blastdbcmd_docker_input.yml | CommandLineTool | Fetch info from BLAST database | database
-|magicblast_docker.cwl | magicblast_docker_input.yml | CommandLineTool | Align sequences | database
-|parse_blast_report.cwl | parse_blast_report_input.yml | parse tabular output| CommandLineTool | Tabular input
+|blastdbcmd_docker.cwl | blastdbcmd_docker_input.yml | CommandLineTool | Fetch info from BLAST database | database |
+|magicblast_docker.cwl | magicblast_docker_input.yml | CommandLineTool | Align sequences | database | 
+|parse_blast_report.cwl | parse_blast_report_input.yml | parse tabular output| CommandLineTool | Tabular input |
 
 
 
