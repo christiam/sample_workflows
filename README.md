@@ -15,7 +15,7 @@ First, you should take a quick read through the [CWL User Guide][cwl_man] (admit
    cwl-runner blastp_docker.cwl blastp_docker_input.yml
    ```
 
-This command just runs a BLASTP search and produces BLAST output.  In the parlance of CWL this module has the class "CommandLineTool".  That's good, but it would be more interesting to run a pipleline where the BLASTP search is just one part of it.  The command below runs BLASTP, the parses the tabular output with a python script:
+This command just runs a BLASTP search and produces BLAST output.  In the parlance of CWL this module has the class "CommandLineTool".  That's good, but it would be more interesting to run a pipleline where the BLASTP search is just one part of it.  The command below runs BLASTP, then parses the tabular output with a python script:
 
    ```bash
    cwl-runner simple_two_step.cwl simple_two_step_input.yml
