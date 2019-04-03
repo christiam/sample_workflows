@@ -1,7 +1,7 @@
 # Sample CWL Pipelines that work with BLAST.
 This directory contains a collection of sample Common Workflow Language (CWL) pipelines that make use of a dockerized version of BLAST.  The samples are also supposed to be simple, so you can easily understand them and start modifying them.
 
-If you are new to CWL, you may want to start by looking at some of the resources listed at the end of this page.
+If you are new to CWL or docker, you may want to start by looking at some of the resources listed at the end of this page.
 
 ### Why a workflow language?
 Many pipeline are written in an ad hoc manner using the scripting language at hand. There's nothing inherently wrong with scripting languages, but a workflow language (e.g., CWL) provides a framework that helps you break your task up into distinct steps that are easier to maintain and performs more checking on input. You can still use a script as one of the steps. Additionally, the CWL framework results in pipeline that are more compliant with [FAIR principles][fair_principles]
@@ -35,7 +35,7 @@ So far, these workflows have been run on a Ubuntu 18.0.4 instance with the follo
 * vim
 * docker
 
-More specific details are coming!
+You'll also need an instance with sufficient disk space for the BLAST databases (300+ GB) and sufficient memory to hold the sequence and index parts of the databases (120 GB seems to work).  Both of these numbers will change as the databases increase in size.
 
 ### Can you describe these workflows?
 Sure.  Look at the table below.
@@ -60,6 +60,8 @@ Sure.  Look at the table below.
 * [Video on CWL][cwl_video] 
 * [BLAST docker documentation][docker_man]
 * [NCBI workbench documentation][workbench_man]
+* [Using BLAST in the Cloud][blast_in_cloud]
+* [Using BLAST Well][blast_well]
 
 [cwl_man]: https://www.commonwl.org/user_guide/
 [cwl_video]: https://www.youtube.com/watch?v=jfQb1HJWRac&feature=youtu.be
@@ -67,5 +69,7 @@ Sure.  Look at the table below.
 [workbench_man]: https://github.com/ncbi/docker/tree/master/ncbi-workbench
 [fair_principles]: https://www.force11.org/group/fairgroup/fairprinciples
 [cwl_mods]: https://github.com/common-workflow-language/workflows/tree/master/tools
+[blast_in_cloud]: https://docs.google.com/presentation/d/1kgIiF2jGZwqLZ1eqyM8ihMtZEwd8w3Bq3IwTIa2AQ-0/edit#slide=id.g463d9de1c4_4_0
+[blast_well]: https://ftp.ncbi.nlm.nih.gov/pub/education/public_webinars/2018/10Oct03_Using_BLAST/Using_BLAST_Well2.pdf
 
 
