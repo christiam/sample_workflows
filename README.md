@@ -4,7 +4,7 @@ This directory contains a collection of sample Common Workflow Language (CWL) pi
 If you are new to CWL or docker, you may want to start by looking at some of the resources listed at the end of this page.
 
 ### Why a workflow language?
-Many pipeline are written in an ad hoc manner using the scripting language at hand. There's nothing inherently wrong with scripting languages, but a workflow language (e.g., CWL) provides a framework that helps you break your task up into distinct steps that are easier to maintain and performs more checking on input. You can still use a script as one of the steps. Additionally, the CWL framework results in pipeline that are more compliant with [FAIR principles][fair_principles]
+Many pipeline are written in an ad hoc manner using the scripting language at hand. There's nothing inherently wrong with scripting languages, but a workflow language (e.g., CWL) provides a framework that helps you break your task up into distinct steps that are easier to maintain and performs more checking on input. You can still use a script as one of the steps. Additionally, the CWL framework results in pipeline that are more compliant with [FAIR principles][fair_principles].
 
 ### What's here that's interesting?
 Enough talk.  What's in this directory that I should look at?  
@@ -15,15 +15,15 @@ First, you should take a quick read through the [CWL User Guide][cwl_man] (admit
    cwl-runner blastp_docker.cwl blastp_docker_input.yml
    ```
 
-This command just runs a BLASTP search and produces BLAST output.  In the parlance of CWL this module has the class "CommandLineTool".  That's good, but it would be more interesting to run a pipleline where the BLASTP search is just one part of it.  The command below runs BLASTP, then parses the tabular output with a python script:
+This command just runs a BLASTP search and produces BLAST output.  In the parlance of CWL this module has the class "CommandLineTool".  That's good, but it would be more interesting to run a pipeline where the BLASTP search is just one part of it.  The command below runs BLASTP, then parses the tabular output with a python script:
 
    ```bash
    cwl-runner simple_two_step.cwl simple_two_step_input.yml
    ``` 
 
-You can modify the python script (it's called parse_blast_report.py) to make it do something else. You can also add steps to this workflow. This module has the CWL class "Workflow" and runs a couple of modules with class CommandLineTool. 
+You can modify the python script (it's called `parse_blast_report.py`) to make it do something else. You can also add steps to this workflow. This module has the CWL class "Workflow" and runs a couple of modules with class CommandLineTool. 
 
-Also, you are not limited to the CWL modules in this directory or the ones you write.  There's a bunch of CWL modules [here][cwl_mods].  One of the workflows in this directory (magicblast2bami.cwl) uses the samtools workflows from that directory to produce a sorted/indexed BAM file from the original SAM file that Magic-BLAST produces.  These modules use a dockerized version of samtools, so you don't even need to compile and install samtools! 
+Also, you are not limited to the CWL modules in this directory or the ones you write.  There's a bunch of CWL modules [here][cwl_mods].  One of the workflows in this directory (`magicblast2bami.cwl`) uses the samtools workflows from that directory to produce a sorted/indexed BAM file from the original SAM file that Magic-BLAST produces.  These modules use a dockerized version of samtools, so you don't even need to compile and install samtools! 
 
 ### Why docker?
 We've dockerized BLAST for our pipelines for a couple of different reasons.  One is that it makes the setup of BLAST on a cloud instance very simple.  Another is that docker plays nicely with CWL.  
@@ -35,7 +35,7 @@ So far, these workflows have been run on a Ubuntu 18.0.4 instance with the follo
 * vim
 * docker
 
-You'll also need an instance with sufficient disk space for the BLAST databases (300+ GB) and sufficient memory to hold the sequence and index parts of the databases (120 GB seems to work).  Both of these numbers will change as the databases increase in size.
+You'll also need an instance with sufficient disk space for the BLAST databases (300+ GB) and sufficient memory to hold the sequence and index parts of the databases (120 GB seems to work as of April 2019).  Both of these numbers will change as the databases increase in size.
 
 ### Can you describe these workflows?
 Sure.  Look at the table below.
@@ -59,6 +59,7 @@ Sure.  Look at the table below.
 * [CWL User Guide][cwl_man] 
 * [Video on CWL][cwl_video] 
 * [BLAST docker documentation][docker_man]
+* [Troubleshooting docker](https://github.com/ncbi/docker/blob/master/blast/README.md#troubleshooting)
 * [NCBI workbench documentation][workbench_man]
 * [Using BLAST in the Cloud][blast_in_cloud]
 * [Using BLAST Well][blast_well]
