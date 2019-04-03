@@ -69,7 +69,8 @@ Sure.  Look at the table below.
 [workbench_man]: https://github.com/ncbi/docker/tree/master/ncbi-workbench
 [fair_principles]: https://www.force11.org/group/fairgroup/fairprinciples
 [cwl_mods]: https://github.com/common-workflow-language/workflows/tree/master/tools
-[blast_in_cloud]: https://docs.google.com/presentation/d/1kgIiF2jGZwqLZ1eqyM8ihMtZEwd8w3Bq3IwTIa2AQ-0/edit#slide=id.g463d9de1c4_4_0
+[blast_in_cloud]: https://docs.google.com/presentation/d/1kgIiF2jGZwqLZ1eqyM8ihMtZEwd8w3Bq3IwTIa2AQ-0/edit#slide=id.p
+[blast_in_cloud]: https://docs.google.com/presentation/d/1kgIiF2jGZwqLZ1eqyM8ihMtZEwd8w3Bq3IwTIa2AQ-0/edit?usp=sharing
 [blast_well]: https://ftp.ncbi.nlm.nih.gov/pub/education/public_webinars/2018/10Oct03_Using_BLAST/Using_BLAST_Well2.pdf
 
 
